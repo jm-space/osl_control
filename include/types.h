@@ -1,0 +1,38 @@
+#ifndef TYPES_H
+#define TYPES_H
+
+enum class State {
+    NO_TELEMETRY,
+    DISARMED,
+    ARMING,
+    ARMED,
+    SPINUP,
+    READY,
+    ENGAGE_TRIGGER,
+    RELEASE_FIRST,
+    RELEASE_SECOND,
+    SPINDOWN,
+    ABORT
+};
+
+enum class TelemetryCmd {
+    NONE,
+    ABORT,
+    ARM,
+    DISARM,
+    SPINUP,
+    RELEASE
+};
+
+struct LaunchParameters {
+    double rpmRelease;
+    double angleRelease;
+};
+
+struct LauncherState {
+    State state;
+    double rpm;
+    double angle;
+};
+
+#endif // TYPES_H

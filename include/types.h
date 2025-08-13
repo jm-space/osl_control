@@ -2,7 +2,6 @@
 #define TYPES_H
 
 enum class State {
-    NO_TELEMETRY,
     DISARMED,
     ARMING,
     ARMED,

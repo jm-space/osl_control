@@ -1,3 +1,5 @@
+# pragma once
+
 namespace osl {
     enum class State {
         DISARMED,

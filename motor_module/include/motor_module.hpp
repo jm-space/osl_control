@@ -4,7 +4,7 @@
 # define PIN_FWD_CONTROL 0
 /// Pin connected to the BWD-Pin of the AC-Driver
 # define PIN_BWD_CONTROL 0
-/// Pin 
+/// Pin connected to the analog input of the AC-Driver, being able to set the drivers frequency
 # define PIN_FREQ_PWM 0 
 
 namespace motor_module {
@@ -13,10 +13,15 @@ namespace motor_module {
     /// Target RPM of the spin launcher
     extern float target_rpm;
 
+    /// Maximum acceleration that will be applied (rad/s^2)
+    extern float max_accel;
+    /// Maximum decceleration that will be applied (rad/s^2)
+    extern float max_deccel;
+
     /// Runs setup for all used pins etc.
     extern void setup();
 
-    /// 
-    /// @param dt 
-    extern void loop(float dt);
+    /// Iterates through the driving process
+    /// @param dt Difference in time in milliseconds
+    extern void loop(uint32_t dt);
 }
